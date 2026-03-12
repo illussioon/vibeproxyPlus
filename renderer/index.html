@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeProxy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="titlebar">VibeProxy</header>
+
+    <section class="panel">
+      <div class="row">
+        <span>Server status</span>
+        <span id="server-status" class="status stopped">● Stopped</span>
+      </div>
+      <div class="row">
+        <span>Launch at login</span>
+        <label class="switch">
+          <input id="launch-toggle" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="row">
+        <span>Auth files</span>
+        <button id="open-auth" class="btn">Open Folder</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-title">Services</div>
+      <div id="service-list"></div>
+    </section>
+
+    <section class="panel controls">
+      <button id="start-btn" class="btn primary">Start Proxy</button>
+      <button id="stop-btn" class="btn">Stop Proxy</button>
+    </section>
+
+    <footer class="footer">
+      <div>VibeProxyPlus v0.1.0 was made possible thanks to <a href="#" id="cli-link">CLIProxyAPIPlus</a> | License: MIT</div>
+      <div>© 2026 Automaze, Ltd. All rights reserved.</div>
+      <a href="#" id="issue-link">Report an issue</a>
+    </footer>
+  </main>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

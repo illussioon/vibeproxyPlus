@@ -1,0 +1,33 @@
+{
+  "name": "vibeproxyplus",
+  "version": "0.1.0",
+  "description": "Windows-first VibeProxy-like desktop app (Electron + Go backend)",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "electron .",
+    "backend:dev": "cd backend && go run ./cmd/server",
+    "backend:build": "cd backend && go build -o bin/vibeproxyplus-backend.exe ./cmd/server",
+    "build:win": "npm run backend:build && electron-builder --win",
+    "lint": "node --check electron/main.js && node --check electron/preload.js && node --check renderer/renderer.js"
+  },
+  "build": {
+    "appId": "com.vibeproxyplus.app",
+    "productName": "VibeProxyPlus",
+    "files": [
+      "electron/**/*",
+      "renderer/**/*",
+      "backend/bin/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^30.0.9",
+    "electron-builder": "^24.13.3"
+  }
+}
